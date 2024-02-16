@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "devcontainer-java-gui",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	// https://stackoverflow.com/a/67803226/21655737
+    	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/post-create.sh ${containerWorkspaceFolder}",	
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings" : {"editor.rulers": [72, 79]},
+			"extensions": [
+				"ms-vscode-remote.remote-wsl",
+				"eamodio.gitlens",
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker",
+				"GitHub.copilot",
+				"DavidAnson.vscode-markdownlint",
+				"analytic-signal.preview-pdf",
+				"vscjava.vscode-java-pack"
+			]
+		}
+	},
+    "runArgs": ["-e DISPLAY=$DISPLAY"]
+}
