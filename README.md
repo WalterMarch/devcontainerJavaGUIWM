@@ -1,8 +1,8 @@
-# devcontainer-java-gui - Visual Studio Code devcontainer for Java including GUI
+# devcontainerJavaGUIWM - Visual Studio Code devcontainer for Java including GUI
 
 ## Sample Dev Container file(s) for  and Java with GUI in VS Code Containerized Development
 
-*assumptions*: **As far as I know, Windows 11 Pro is the only operating system this actually works in.** Docker and VS Code installed as well as the Dev Containers extension for Visual Studio Code.
+*assumptions*: Docker and VS Code installed as well as the Dev Containers extension for Visual Studio Code.
 
 *usage*: clone the repo then open in Visual Studio Code.
 
@@ -12,15 +12,17 @@ This devcontainer is based on the latest Ubuntu image (`mcr.microsoft.com/devcon
 
 The JDK is installed by `post-create.sh`.
 
-The following line in the `devcontainer.json` allows us to run a Java GUI application on Windows 11 Pro from inside a VS Code devcontainer installation.
+The following line in the `devcontainer.json` allows us to run a Java GUI application from inside a VS Code devcontainer installation.
 
 ```jsonc
     "runArgs": ["-e DISPLAY=$DISPLAY"]
 ```
 
+When I first found the suggestion to use `runArgs`, the source suggested it only worked in Windows 11. I have also found it works on MacOS.
+
 ## Run the Sample Code
 
-In the `/workspaces/devcontainer-java-gui/sample` directory, run the following commands:
+In the `sample` directory, run the following commands:
 
 ```bash
 javac SwingHello.java
