@@ -1,6 +1,6 @@
 # devcontainerJavaGUIWM - Visual Studio Code devcontainer for Java including GUI
 
-## Sample Dev Container file(s) for  and Java with GUI in VS Code Containerized Development
+## Sample Dev Container file(s) for Java with GUI in VS Code Containerized Development
 
 *assumptions*: Docker and VS Code installed as well as the Dev Containers extension for Visual Studio Code.
 
@@ -29,7 +29,7 @@ javac SwingHello.java
 java SwingHello
 ```
 
-### miscellany
+## miscellany
 
 `configit.sh` looks like this:
 
